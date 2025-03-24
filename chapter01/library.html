@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- 스타일 마지막에 나의 css파일 배치 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- 나의 js 파일 -->
+  </head>
+  <body>
+    <div class="container">
+      <h1><i class="fa-solid fa-book"></i> 우리 도서관</h1>
+      <div class="bg-light p-3">
+        <h3>현재 도서 현황</h3>
+          <table class="table table-bordered w-25">
+            <tr>
+              <td class="d-flex justify-content-between align-items-center">
+                총 도서 <span class="badge rounded-pill bg-primary">15000</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="d-flex justify-content-between align-items-center">
+                대출 가능 <span class="badge rounded-pill bg-success">12500</td>
+            </tr>
+            <tr>
+              <td class="d-flex justify-content-between align-items-center">
+                대출 중 <span class="badge rounded-pill bg-warning">2500</td>
+            </tr>
+          </table>
+      </div>
+
+      <div class="mt-3">
+        <h2>신규 도서 등록</h2> 
+        <div class="row mt-3">
+          <div class="col">
+          <label for="bookId"> 도서명</label>
+          <input type="text" class="form-control" id="bookId" name="bookId" />
+        </div>
+        <div class="col">
+          <label for="makerId"> 저자</label>
+          <input type="text" class="form-control" id="makerId" name="makerId" />
+        </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col">
+            <label for="bookStore"> 출판사</label>
+            <input type="text" class="form-control" id="bookStore" name="bookStore" />
+          </div>
+          <div class="col">
+            <label for="isbn"> ISBN</label>
+            <input type="text" class="form-control" id="isbn" name="isbn" />
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="avatar">이미지 업로드</label>
+          <input type="file" class="form-control" id="avatar" name="avatar" />
+        </div>
+        <button type="submit" class="btn btn-primary">등록하기</button>
+      </div>
+
+      <div class="bg-light">
+        <h1 class="text-center">도서 상세 정보</h1>
+        <table class="table table-bordered">
+          <thead class="table-dark">
+            <tr>
+              <th>도서명</th>
+              <th>저자</th>
+              <th>출판사</th>
+              <th>상태</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>해리포터와 마법사의 돌</td>
+              <td>J.K. 롤링</td>
+              <td>문화수첩</td>
+              <td><span class="badge bg-success">대출가능</td></td>
+            </tr>
+            <tr>
+              <td>어린왕자</td>
+              <td>생텍쥐페리</td>
+              <td>엘림원</td>
+              <td><span class="badge bg-warning">대출중</td></td>
+            </tr>
+            <tr>
+              <td>데미안</td>
+              <td>헤르만 헤세</td>
+              <td>믿음사</td>
+              <td><span class="badge bg-success">대출가능</td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="row ">
+        <h2>도서관 이용 통계</h2>
+        <div class="col-12 d-flex justify-content-between flex-wrap">
+        <div class="card border mb-3 col-md-7">
+          <h3>분기별 이용 현황</h3>
+          <table class="table table-bordered mt-2">
+            <thead>
+              <th>월</th>
+              <th>대출 건수</th>
+              <th>반납 건수</th>
+              <th>연체 건수</th>
+              <th>신규 회원</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1월</td>
+                <td class="text-primary">450</td>
+                <td class="text-success">423</td>
+                <td class="text-danger">27</td>
+                <td>45</td>
+              </tr>
+              <tr>
+                <td>2월</td>
+                <td class="text-primary">380</td>
+                <td class="text-success">365</td>
+                <td class="text-danger">15</td>
+                <td>38</td>
+              </tr>
+              <tr>
+                <td>3월</td>
+                <td class="text-primary">520</td>
+                <td class="text-success">498</td>
+                <td class="text-danger">22</td>
+                <td>52</td>
+              </tr>
+              <tr>
+                <td>합계</td>
+                <td>1,350</td>
+                <td>1,286</td>
+                <td>64</td>
+                <td>135</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card border mb-3 col-md-4">
+          <h3>주요 통계</h3>
+          <table class="table">
+            <tr>
+              <td class="d-flex justify-content-between align-items-center">
+                월 평균 대출 <span class="badge rounded-pill bg-primary">450건</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="d-flex justify-content-between align-items-center">
+                반납 준수율 <span class="badge rounded-pill bg-success">95.2%</td>
+            </tr>
+            <tr>
+              <td class="d-flex justify-content-between align-items-center">
+                월 평균 신규 회원 <span class="badge rounded-pill bg-info">45명</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      </div>
+
+      <div class="row bg-light px-4">
+        <h1 class="text-center">도서관 정보</h1>
+        <div class="col-12 d-flex flex-wrap justify-content-around">
+        <div class="card border mb-5 col-md-5">
+          <h4><i class="fa-solid fa-phone"></i> 연락처</h4>
+          <h6><i class="fa-solid fa-mobile-screen-button"></i> 전화: 02-1234-4567</h6>
+          <h6><i class="fa-solid fa-envelope"></i> 이메일: library@example.com</h6>
+          <h6><i class="fa-solid fa-print"></i> 팩스: 02-1234-5679</h6>
+        </div>
+        <div class="card border mb-5 col-md-5">
+          <h4><i class="fa-solid fa-location-dot"></i> 위치 정보</h4>
+          <h6><i class="fa-solid fa-city"></i> 서울특별시 강남구 테헤란로</h6>
+          <h6><i class="fa-solid fa-signs-post"></i> 우편번호: 06134</h6>
+          <h6><i class="fa-regular fa-clock"></i> 운영시간: 평일 09:00 ~ 18:00</h6>
+        </div>
+      </div>
+      </div>
+      <footer class="py-4 bg-dark text-white">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-8">
+              <p class="mb-0">© 2025 우리 도서관</p>
+            </div>
+            <div class="col-md-4">
+              <ul class="list-inline text-md-end mb-0">
+                <li class="list-inline-item">
+                  <a href="#" class="text-white"
+                    ><i class="bi bi-facebook"></i
+                  ></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#" class="text-white"><i class="bi bi-twitter"></i></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#" class="text-white"
+                    ><i class="bi bi-instagram"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+      </div>
+
+      
+    </div>
+  </body>
+</html>
