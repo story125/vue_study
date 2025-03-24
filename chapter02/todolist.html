@@ -111,10 +111,10 @@
     <script type="text/javascript">
       var ts = new Date().getTime();
       var vm = Vue.createApp({
-        name: 'App',
+        name: "App",
         data() {
           return {
-            todo: '',
+            todo: "",
             todolist: [],
           };
         },
@@ -136,7 +136,7 @@
                 todo: this.todo,
                 completed: false,
               });
-              this.todo = '';
+              this.todo = "";
             }
           },
           deleteTodo(id) {
@@ -148,7 +148,7 @@
             this.todolist[index].completed = !this.todolist[index].completed;
           },
         },
-      }).mount('#app');
+      }).mount("#app");
     </script>
   </body>
 </html>

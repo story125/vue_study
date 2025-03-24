@@ -22,17 +22,31 @@
   </head>
   <body>
     <div id="app" class="container">
-      <div class="row md-3">
-        <div class="col-6">
+      <div class="row mb-3">
+        <div class="col-md-6">
           <h3>ToDo - {{isDoneTotal}}/{{Total}}개 남음</h3>
           <div class="input-group">
             <input
               type="text"
               class="form-control"
               placeholder="할 일을 입력하세요"
-              v-model="todo"
+              v-model.trim="todo"
+              @keyup.enter="addTodo"
             />
-            <span class="btn input-group-addon bg-light border">추가</span>
+            <span class="btn input-group-addon bg-light border" @click="addTodo"
+              >추가</span
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-6 mb-3" v-for="todoitem in todos" :key="todoitem.id">
+            <div class="card h-100">
+              <div class="card-body">
+                <h4 class="card-title">{{todoitem.todo}}</h4>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -40,18 +54,34 @@
     <script src="https://unpkg.com/vue"></script>
     <script>
       let vm = Vue.createApp({
-        name: 'App',
+        name: "App",
         data() {
           return {
-            todo: '',
+            todo: "",
             todos: [],
             isDoneTotal: 0,
             Total: 0,
           };
         },
         computed: {},
-        methods: {},
-      }).mount('#app');
+        methods: {
+          addTodo() {
+            if (this.todo.length >= 1) {
+              this.todos.push({
+                id: new Date().getTime(),
+                todo: this.todo,
+                isDone: false,
+                isPriority: false,
+              });
+            }
+            this.todo = "";
+          },
+          toggleCompleted(id) {
+            let index = this.todos.findIndex((item) => id === item.id);
+            this.todos[index].isDone = !this.todos[index].isDone;
+          },
+        },
+      }).mount("#app");
     </script>
   </body>
 </html>
